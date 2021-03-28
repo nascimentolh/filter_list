@@ -6,7 +6,7 @@ defmodule ListFilter do
         :error -> []
       end
     end)
-    |> Enum.filter(fn x -> rem(x, 2) == 0 end)
+    |> Enum.filter(&rem(&1, 2) != 0)
     |> Enum.count()
   end
 end
